@@ -32,7 +32,7 @@ export default function RootLayout({
           <header>
             <Navbar />
           </header>
-          <div className='flex flex-1'>{children}</div>
+          <div className='flex flex-1 px-10'>{children}</div>
           <footer>Footer</footer>
         </main>
       </body>

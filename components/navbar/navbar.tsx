@@ -2,7 +2,7 @@ import NavLink from "../nav-link/navLink";
 
 export default function Navbar() {
   return (
-    <nav className='shadow mx-8'>
+    <nav className='mx-8 py-4 border-b rounded-b'>
       <div className='flex flex-row justify-between'>
         <div className='flex flex-row gap-4'>
           <NavLink href='/'>Home</NavLink>
