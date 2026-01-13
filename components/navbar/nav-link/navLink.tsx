@@ -11,7 +11,12 @@ export default function NavLink({ href, children }: PropsType) {
   const pathName = usePathname();
   const isActive = pathName === href || pathName.startsWith(`${href}/`);
   return (
-    <Link className={`${isActive ? "underline" : undefined}`} href={href}>
+    <Link
+      className={`${
+        isActive ? "underline" : "hover:cursor-pointer hover:underline"
+      }`}
+      href={href}
+    >
       {children}
     </Link>
   );

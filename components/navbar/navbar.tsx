@@ -1,4 +1,5 @@
-import NavLink from "../nav-link/navLink";
+import NavAuthButtons from "./nav-auth-button/nav-auth-button";
+import NavLink from "./nav-link/navLink";
 
 export default function Navbar() {
   return (
@@ -9,8 +10,7 @@ export default function Navbar() {
           <NavLink href='/products'>Products</NavLink>
         </div>
         <div className='flex flex-row gap-4'>
-          <NavLink href='/login'>login</NavLink>
-          <NavLink href='/signup'>signup</NavLink>
+          <NavAuthButtons />
         </div>
       </div>
     </nav>
