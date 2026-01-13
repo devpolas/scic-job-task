@@ -7,7 +7,7 @@ export default function Navbar() {
       <div className='flex flex-row justify-between'>
         <div className='flex flex-row gap-4'>
           <NavLink href='/'>Home</NavLink>
-          <NavLink href='/products'>Products</NavLink>
+          <NavLink href='/products'>Tours</NavLink>
         </div>
         <div className='flex flex-row gap-4'>
           <NavAuthButtons />
