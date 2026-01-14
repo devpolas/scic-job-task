@@ -4,11 +4,18 @@ import path from "path";
 
 const filePath = path.join(process.cwd(), "data", "users.json");
 
-export async function getUser(email: string): Promise<User | undefined> {
+export async function getUserByEmail(email: string): Promise<User | undefined> {
   const data = await fs.readFile(filePath, "utf-8");
   const users: User[] = await JSON.parse(data);
 
   return users.find((user) => user.email === email);
+}
+
+export async function getUserById(id: string): Promise<User | undefined> {
+  const data = await fs.readFile(filePath, "utf-8");
+  const users: User[] = await JSON.parse(data);
+
+  return users.find((user) => user.id === id);
 }
 
 export async function postUser(user: User): Promise<boolean> {

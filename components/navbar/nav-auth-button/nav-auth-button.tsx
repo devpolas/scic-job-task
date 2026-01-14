@@ -8,7 +8,6 @@ export default function NavAuthButtons() {
         <button
           className='mr-4 hover:underline hover:cursor-pointer'
           type='button'
-          role='button'
         >
           Logout
         </button>

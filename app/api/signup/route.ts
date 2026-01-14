@@ -1,4 +1,4 @@
-import { postUser } from "@/lib/users";
+import { getUserByEmail, postUser } from "@/lib/users";
 import { NextRequest, NextResponse } from "next/server";
 import bcrypt from "bcrypt";
 import jwt, { SignOptions } from "jsonwebtoken";
@@ -9,6 +9,15 @@ export async function POST(req: NextRequest) {
   if (!id || !name || !email || !password) {
     return NextResponse.json(
       { message: "Missing required fields" },
+      { status: 400 }
+    );
+  }
+
+  const user = await getUserByEmail(email);
+
+  if (user) {
+    return NextResponse.json(
+      { message: "user already exists!" },
       { status: 400 }
     );
   }
@@ -38,7 +47,6 @@ export async function POST(req: NextRequest) {
   );
   response.cookies.set("token", token, {
     httpOnly: true,
-    path: "/",
     secure: process.env.NODE_ENV === "production",
     sameSite: "lax",
     maxAge: 60 * 60 * 24 * 30,
