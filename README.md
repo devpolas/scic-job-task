@@ -1,36 +1,133 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next Tour
 
-## Getting Started
+A modern **Next.js 16** application built as part of a job task.  
+This project demonstrates authentication using **JWT**, API routes, server/client component separation, and a clean UI powered by **Tailwind CSS**.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🚀 Tech Stack
+
+- **Next.js 16 (App Router + Turbopack)**
+- **React 19**
+- **TypeScript**
+- **Tailwind CSS**
+- **JWT Authentication**
+- **bcrypt** (password hashing)
+
+---
+
+## 📂 Project Structure
+
+```
+src/
+├── app/
+│ ├── api/ # API routes (login, logout, me)
+│ ├── layout.tsx # Root layout
+│ └── page.tsx # Home page
+├── lib/ # Server-side helpers
+├── store/ # Client-side auth logic
+├── types/ # TypeScript types
+└── components/ # Reusable UI components
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🔐 Authentication Flow
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+- Login using email & password
+- JWT is generated on the server
+- Token is stored in an **HTTP-only cookie**
+- User session is validated via `/api/me`
+- Logout clears the cookie securely
 
-## Learn More
+```
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🧪 API Endpoints
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+| Method | Endpoint      | Description           |
+| ------ | ------------- | --------------------- |
+| POST   | `/api/login`  | Login user            |
+| POST   | `/api/logout` | Logout user           |
+| GET    | `/api/me`     | Get current user info |
 
-## Deploy on Vercel
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## ⚙️ Environment Variables
+
+Create a `.env` file in the root:
+
+```env
+JWT_SECRET=your_jwt_secret
+WEBSITE_URL = http://localhost:3000
+NEXT_PUBLIC_WEBSITE_URL= http://localhost:3000
+
+```
+
+## 🧑‍💻 Installation & Setup
+
+```
+bash
+Copy code
+# Install dependencies
+npm install
+
+# Run development server
+npm run dev
+App will be available at:
+
+Copy code
+http://localhost:3000
+
+```
+
+## 📦 Scripts
+
+```
+bash
+Copy code
+npm run dev     # Start development server
+npm run build   # Build for production
+npm run start   # Run production build
+npm run lint    # Run ESLint
+
+```
+
+## ✨ Features
+
+```
+Secure JWT-based authentication
+
+Server & Client component separation
+
+Protected routes logic
+
+Clean, responsive UI
+
+Modern Next.js best practices
+
+```
+
+## 📌 Notes
+
+```
+Cookies are handled securely on the server
+
+Client never accesses JWT directly
+
+Uses credentials: "include" for auth requests
+
+```
+
+## 📄 License
+
+```
+This project is created for evaluation purposes only.
+
+```
