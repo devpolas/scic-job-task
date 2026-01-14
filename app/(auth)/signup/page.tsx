@@ -1,3 +1,4 @@
+import SignupForm from "@/components/auth/signup-form";
 import Link from "next/link";
 
 export default function SignupPage() {
@@ -9,74 +10,7 @@ export default function SignupPage() {
           <p className='mt-1 text-sm'>Create an account</p>
         </div>
 
-        <form className='space-y-5'>
-          <div>
-            <label htmlFor='name' className='block mb-1 font-medium text-sm'>
-              Full Name
-            </label>
-            <input
-              id='name'
-              type='text'
-              name='name'
-              placeholder='Enter Your Name'
-              required
-              className='px-4 py-2.5 border rounded-lg focus:outline-none focus:ring-2 w-full text-sm'
-            />
-          </div>
-          <div>
-            <label htmlFor='email' className='block mb-1 font-medium text-sm'>
-              Email
-            </label>
-            <input
-              required
-              id='email'
-              type='email'
-              name='email'
-              placeholder='you@example.com'
-              className='px-4 py-2.5 border rounded-lg focus:outline-none focus:ring-2 w-full text-sm'
-            />
-          </div>
-
-          <div>
-            <label
-              htmlFor='password'
-              className='block mb-1 font-medium text-sm'
-            >
-              Password
-            </label>
-            <input
-              required
-              id='password'
-              type='password'
-              name='password'
-              placeholder='********'
-              className='px-4 py-2.5 border rounded-lg focus:outline-none focus:ring-2 w-full text-sm'
-            />
-          </div>
-          <div>
-            <label
-              htmlFor='passwordConfirm'
-              className='block mb-1 font-medium text-sm'
-            >
-              Password Confirm
-            </label>
-            <input
-              required
-              id='passwordConfirm'
-              type='password'
-              name='passwordConfirm'
-              placeholder='********'
-              className='px-4 py-2.5 border rounded-lg focus:outline-none focus:ring-2 w-full text-sm'
-            />
-          </div>
-
-          <button
-            type='submit'
-            className='py-2.5 border rounded-lg w-full font-medium transition hover:cursor-pointer'
-          >
-            Signup
-          </button>
-        </form>
+        <SignupForm />
 
         <div className='flex items-center gap-3 my-6'>
           <div className='flex-1 h-px' />

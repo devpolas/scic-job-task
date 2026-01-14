@@ -1,7 +1,7 @@
 import { Tour } from "@/types/tour";
 
 export async function getTours(): Promise<Tour[]> {
-  const res = await fetch(`${process.env.WEBSITE_URL}/tour.json`);
+  const res = await fetch(`${process.env.WEBSITE_URL}/tours.json`);
 
   if (!res.ok) {
     throw new Error("Failed to fetch tours");
@@ -12,7 +12,7 @@ export async function getTours(): Promise<Tour[]> {
 }
 
 export async function getTourById(id: string): Promise<Tour | undefined> {
-  const res = await fetch(`${process.env.WEBSITE_URL}/tour.json`);
+  const res = await fetch(`${process.env.WEBSITE_URL}/tours.json`);
 
   if (!res.ok) {
     throw new Error("Failed to fetch tours");
