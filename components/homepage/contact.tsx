@@ -3,7 +3,7 @@ import ContactWithIcon from "../contact/contact-with-icon";
 
 export default function Contact() {
   return (
-    <div className='my-10'>
+    <div className='my-16'>
       <h1 className='bg-clip-text bg-linear-to-r from-blue-500 via-purple-500 to-green-500 text-transparent text-4xl text-center'>
         Get in Touch
       </h1>
