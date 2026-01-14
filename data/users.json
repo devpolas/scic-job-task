@@ -4,5 +4,11 @@
     "name": "Polas",
     "email": "polas@gmail.com",
     "password": "$2b$12$hylGGYWQhpXZJxoRsR4MbuNnjXkBlfbuTFXRTczbOLmqf.EjPieee"
+  },
+  {
+    "id": "_r_0_",
+    "name": "PolasCB",
+    "email": "pkborman@gmail.com",
+    "password": "$2b$12$89IdnYuwSrWIOfT61e7zN.I0pSMBQIGKNjY.sVbFXLtJyocb0wvkS"
   }
 ]

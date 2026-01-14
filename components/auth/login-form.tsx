@@ -10,9 +10,16 @@ export default function LoginForm() {
     const formValues = Object.fromEntries(data.entries()) as {
       email: string;
       password: string;
-      remember?: string;
     };
-    console.log(formValues);
+    const res = await fetch("/api/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ ...formValues }),
+    });
+
+    console.log(res);
   }
   return (
     <form onSubmit={handleLogin} className='space-y-5'>
