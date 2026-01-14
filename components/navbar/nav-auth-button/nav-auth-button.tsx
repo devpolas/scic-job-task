@@ -1,13 +1,16 @@
+"use client";
+import useAuth from "@/store/useAuth";
 import NavLink from "../nav-link/navLink";
 
 export default function NavAuthButtons() {
-  const isAuth = false;
+  const { isAuth, handleLogout } = useAuth();
   return (
     <>
       {isAuth ? (
         <button
           className='mr-4 hover:underline hover:cursor-pointer'
           type='button'
+          onClick={handleLogout}
         >
           Logout
         </button>

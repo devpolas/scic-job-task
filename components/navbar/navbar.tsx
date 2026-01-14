@@ -1,3 +1,4 @@
+"use client";
 import NavAuthButtons from "./nav-auth-button/nav-auth-button";
 import NavLink from "./nav-link/navLink";
 
