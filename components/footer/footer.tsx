@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <div className='flex flex-col justify-center items-center gap-4 p-4 border-t rounded-t'>
+    <div className='flex flex-col justify-center items-center gap-4 mt-8 p-4 border-t rounded-t'>
       <div className='flex flex-row gap-4'>
         <Link className='hover:underline' href='/'>
           Home
