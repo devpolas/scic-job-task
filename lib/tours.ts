@@ -1,23 +1,16 @@
+import fs from "fs/promises";
+import path from "path";
 import { Tour } from "@/types/tour";
 
 export async function getTours(): Promise<Tour[]> {
-  const res = await fetch(`${process.env.WEBSITE_URL}/tours.json`);
-
-  if (!res.ok) {
-    throw new Error("Failed to fetch tours");
-  }
-
-  const tours: Tour[] = await res.json();
-  return tours;
+  const filePath = path.join(process.cwd(), "data/tours.json");
+  const data = await fs.readFile(filePath, "utf-8");
+  return JSON.parse(data);
 }
 
 export async function getTourById(id: string): Promise<Tour | undefined> {
-  const res = await fetch(`${process.env.WEBSITE_URL}/tours.json`);
-
-  if (!res.ok) {
-    throw new Error("Failed to fetch tours");
-  }
-
-  const tours: Tour[] = await res.json();
+  const filePath = path.join(process.cwd(), "data/tours.json");
+  const data = await fs.readFile(filePath, "utf-8");
+  const tours: Tour[] = JSON.parse(data);
   return tours.find((tour) => tour.id === id);
 }
