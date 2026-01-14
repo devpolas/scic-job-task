@@ -1,12 +1,12 @@
 import Contact from "@/components/homepage/contact";
 import HeroSection from "@/components/homepage/hero";
-import TourCard from "@/components/tour/tour-card";
+import TopTour from "@/components/tour/top-tour";
 
 export default function page() {
   return (
     <div>
       <HeroSection />
-      <TourCard />
+      <TopTour />
       <Contact />
     </div>
   );

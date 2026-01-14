@@ -1,25 +1,60 @@
-export default function TourCard() {
+import Image from "next/image";
+import Link from "next/link";
+
+type Tour = {
+  id: string;
+  title: string;
+  location: string;
+  duration: string;
+  price: number;
+  rating: number;
+  reviews: number;
+  image: string;
+  category: string;
+};
+
+export default function TourCard({ tour }: { tour: Tour }) {
   return (
-    <div className='border rounded max-w-sm text-center transition-all hover:-translate-y-0.5 duration-150 hover:cursor-pointer'>
-      <div className='mx-auto p-8 border rounded-t w-full'>
-        <h1>Paris</h1>
-      </div>
-      <div className='p-4'>
-        <h1 className='mt-2 text-2xl'>Paris City Tour</h1>
-        <p className='text-sm'>
-          <span className='underline underline-offset-4'>3 days</span> · Eiffel
-          Tower · Louvre Museum
-        </p>
-        <p className='text-sm underline underline-offset-4'>Family Tour</p>
-        <p className='text-lg'>$499</p>
-      </div>
-      <div className='p-4 text-center'>
+    <div className='border rounded'>
+      <Link href={`/tours/${tour.id}`} className='block'>
+        <div className='hover:shadow-lg overflow-hidden transition'>
+          <div className='relative w-full h-48'>
+            <Image
+              src={tour.image}
+              alt={tour.title}
+              fill
+              className='object-cover'
+            />
+          </div>
+
+          <div className='p-4'>
+            <h3 className='font-bold text-lg'>{tour.title}</h3>
+            <p className='text-gray-500 text-sm'>{tour.location}</p>
+
+            <div className='flex justify-between items-center mt-3 text-sm'>
+              <span>
+                ⭐ {tour.rating} ({tour.reviews})
+              </span>
+              <span className='font-semibold'>${tour.price}</span>
+            </div>
+          </div>
+        </div>
+      </Link>
+      <hr />
+      <div className='flex flex-row justify-around p-2'>
+        <Link href={`/tours/${tour.id}`} className='block'>
+          <button
+            className='p-2 border hover:border-none rounded hover:underline underline-offset-4 transition-all hover:-translate-y-0.5 active:translate-y-0 duration-150 hover:cursor-pointer'
+            type='button'
+          >
+            View Details
+          </button>
+        </Link>
         <button
+          className='p-2 border hover:border-none rounded hover:underline underline-offset-4 transition-all hover:-translate-y-0.5 active:translate-y-0 duration-150 hover:cursor-pointer'
           type='button'
-          role='button'
-          className='shadow-md mt-4 p-2 border hover:border-dashed rounded hover:underline transition-all hover:-translate-y-0.5 active:translate-y-0 duration-150 hover:cursor-pointer'
         >
-          Details
+          Book Now
         </button>
       </div>
     </div>
