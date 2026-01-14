@@ -1,8 +1,10 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { useId } from "react";
 
 export default function SignupForm() {
+  const router = useRouter();
   const id = useId();
   async function handleSignup(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -27,7 +29,9 @@ export default function SignupForm() {
       method: "POST",
       body: JSON.stringify({ ...formData, id }),
     });
-    console.log(res);
+    if (res.status === 201) {
+      router.push("/");
+    }
   }
   return (
     <form onSubmit={handleSignup} className='space-y-5'>

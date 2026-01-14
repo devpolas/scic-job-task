@@ -1,8 +1,10 @@
 "use client";
 
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function LoginForm() {
+  const router = useRouter();
   async function handleLogin(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
@@ -19,7 +21,9 @@ export default function LoginForm() {
       body: JSON.stringify({ ...formValues }),
     });
 
-    console.log(res);
+    if (res.status === 200) {
+      router.push("/");
+    }
   }
   return (
     <form onSubmit={handleLogin} className='space-y-5'>
@@ -32,6 +36,7 @@ export default function LoginForm() {
           id='email'
           name='email'
           type='email'
+          defaultValue={"admin@nexttour.com"}
           placeholder='you@example.com'
           className='px-4 py-2.5 border rounded-lg focus:outline-none focus:ring-2 w-full text-sm'
         />
@@ -46,6 +51,7 @@ export default function LoginForm() {
           id='password'
           name='password'
           type='password'
+          defaultValue={"123456"}
           placeholder='********'
           className='px-4 py-2.5 border rounded-lg focus:outline-none focus:ring-2 w-full text-sm'
         />

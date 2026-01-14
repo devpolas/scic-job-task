@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import BookedButton from "../book/book-button";
 
 type Tour = {
   id: string;
@@ -50,12 +51,7 @@ export default function TourCard({ tour }: { tour: Tour }) {
             View Details
           </button>
         </Link>
-        <button
-          className='p-2 border hover:border-none rounded hover:underline underline-offset-4 transition-all hover:-translate-y-0.5 active:translate-y-0 duration-150 hover:cursor-pointer'
-          type='button'
-        >
-          Book Now
-        </button>
+        <BookedButton />
       </div>
     </div>
   );

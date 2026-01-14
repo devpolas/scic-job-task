@@ -4,7 +4,7 @@ export default function HeroSection() {
   return (
     <div className='flex justify-center items-center mt-2 border rounded w-full min-h-[40vh]'>
       <div>
-        <h1 className='bg-clip-text bg-linear-to-r from-blue-500 via-purple-500 to-green-500 text-transparent text-3xl'>
+        <h1 className='bg-clip-text bg-linear-to-r from-blue-500 via-purple-500 to-green-500 text-transparent text-4xl'>
           Welcome to Next World!
         </h1>
         <p className='mt-3 text-sm text-center underline underline-offset-8'>

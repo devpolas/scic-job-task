@@ -10,5 +10,11 @@
     "name": "PolasCB",
     "email": "pkborman@gmail.com",
     "password": "$2b$12$89IdnYuwSrWIOfT61e7zN.I0pSMBQIGKNjY.sVbFXLtJyocb0wvkS"
+  },
+  {
+    "id": "_r_0_",
+    "name": "Next Tour",
+    "email": "admin@nexttour.com",
+    "password": "$2b$12$3nC8OuZTHLuICKxXy8Qlt.Qb.Nc2Bwtbc/jVP1ZLGYq4rt8atmbbq"
   }
 ]

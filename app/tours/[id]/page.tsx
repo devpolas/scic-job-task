@@ -1,4 +1,5 @@
-import { getTourById, getTours } from "@/lib/tours";
+import BookedButton from "@/components/book/book-button";
+import { getTourById } from "@/lib/tours";
 import { Tour } from "@/types/tour";
 import Image from "next/image";
 import { notFound } from "next/navigation";
@@ -62,7 +63,7 @@ export default async function TourDetailsPage({
               {tour.highlights.map((item) => (
                 <li
                   key={item}
-                  className='hover:bg-gray-100 px-4 py-2 border rounded-lg text-sm transition'
+                  className='px-4 py-2 border rounded-lg text-sm transition'
                 >
                   ✔ {item}
                 </li>
@@ -72,15 +73,10 @@ export default async function TourDetailsPage({
         </div>
 
         {/* Right Column: Booking Card */}
-        <div className='lg:top-24 lg:sticky shadow-lg p-6 border rounded-xl h-fit'>
+        <div className='lg:top-24 lg:sticky flex flex-col justify-center items-center shadow-lg p-6 border rounded-xl'>
           <p className='text-gray-500 text-sm'>Starting from</p>
           <p className='mb-4 font-bold text-3xl md:text-4xl'>${tour.price}</p>
-          <button className='bg-black hover:opacity-90 py-3 rounded-lg w-full text-white transition'>
-            Book Now
-          </button>
-          <p className='mt-3 text-gray-500 text-xs text-center'>
-            No payment required today
-          </p>
+          <BookedButton />
         </div>
       </div>
     </section>
